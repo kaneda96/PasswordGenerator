@@ -2,6 +2,7 @@ let sliderElement = document.querySelector("#slider")
 let buttonElement = document.querySelector("#button")
 let sizePassword = document.querySelector("#valor")
 let password = document.querySelector("#password")
+let toolTipElement = document.querySelector("#tooltip")
 
 let containerpassword = document.querySelector("#container-password");
 
@@ -16,6 +17,7 @@ slider.oninput = function(){
 
 function generatePassword(){
     let pass ="";
+    toolTipElement.innerHTML = "Clique na senha para copiar..."
     for (let index = 0, n = charset.length; index < sliderElement.value; index++) {
        pass += charset.charAt(Math.floor(Math.random() * n))        
     }
@@ -24,6 +26,6 @@ function generatePassword(){
 }
 
 function copyPassword(){
-    alert("Senha copiada!")
+    toolTipElement.innerHTML = "Senha copiada!"
     navigator.clipboard.writeText(novaSenha)
 }
