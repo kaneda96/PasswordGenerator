@@ -7,7 +7,6 @@ let toolTipElement = document.querySelector("#tooltip")
 let containerpassword = document.querySelector("#container-password");
 
 let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@"
-let novaSenha = "";
 
 sizePassword.innerHTML = sliderElement.value;
 
@@ -23,9 +22,10 @@ function generatePassword(){
     }
     containerpassword.classList.remove("hide")
     password.innerHTML = pass
+
 }
 
 function copyPassword(){
     toolTipElement.innerHTML = "Senha copiada!"
-    navigator.clipboard.writeText(novaSenha)
+    navigator.clipboard.writeText(password.innerHTML)
 }
